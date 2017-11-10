@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>Error</title>
+</head>
+
+<body class="background">
+<div class="centered-horizontally">
+    <a href="/">Home</a>
+    <h1>Error</h1>
+    <% for (let error of errors) { %>
+        <h1><%=error.msg %></h1>
+    <% } %>
+
+</div>
+
+</body>
+
+</html>

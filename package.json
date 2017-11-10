@@ -1,0 +1,30 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "engines": {
+    "node": "8.5.0",
+    "yarn": "1.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "busboy-body-parser": "^0.3.0",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^7.0.3"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "morgan": "^1.9.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
+  }
+}

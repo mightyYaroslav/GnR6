@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>Albums</title>
+</head>
+
+<body class="background">
+<div class="centered-horizontally">
+    <a href="/albums/all">All albums</a>
+    <h1>Profiles</h1>
+    <ul>
+    <% for(let user of users) { %>
+        <li><%= user.username %></li>
+    <% } %>
+    </ul>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.gallery {
+    margin: 5px;
+    float: left;
+    width: 15%;
+}
+
+.gallery img {
+    border: 1px solid #ccc;
+    width: 100%;
+    transition: all .2s;
+    height: auto;
+}
+
+.gallery img:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

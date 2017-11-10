@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>Albums</title>
+</head>
+
+<body class="background">
+<div class="centered-horizontally">
+    <a href="/">Home</a>
+    <% if (user.role === 'admin') {%>
+        <a href="/profiles">Profiles</a>
+    <% } %>
+
+    <div class="form-container">
+        <form action="/user/logout" method="get">
+            <div class="form-row">
+                <label>You logged in as <%= user.username %></label>
+                <input type="submit" value="Log out">
+            </div>
+        </form>
+    </div>
+
+    <h1 class="header-center">Albums</h1>
+    <div class="form-container">
+        <% if (user.role === 'admin') { %>
+            <form action="/albums/add" method="get">
+                <div class="form-row">
+                    <input type="submit" value="&#43">
+                </div>
+            </form>
+        <% } %>
+        <form action="/albums/all" method="post">
+            <div class="search-form-row">
+                <input type="search" name="searchTitle" placeholder="Enter album name" value="<%= searchText %>>">
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <% if (albums == null || albums.length === 0) { %>
+    <h1>Nothing found</h1>
+    <% } else { %>
+    <% for(let album of albums) { %>
+    <div class="gallery">
+        <a href="/albums/all/<%= album.id %>">
+            <img src="data:image;base64,<%= new Buffer(album.image).toString('base64') %>">
+        </a>
+        <% if (user.role === 'admin') { %>
+            <form action="/albums/delete" method="post">
+                <input type="hidden" name="id" value="<%= album.id %>">
+                <button type="submit" value="delete">&times</button>
+            </form>
+        <% } %>
+    </div>
+    <% } %>
+    <% } %>
+</div>
+
+</body>
+
+</html>

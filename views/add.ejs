@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>Add</title>
+</head>
+
+<body class="blur-background">
+<form action="/albums/add" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+        <label>title:</label>
+        <input type="text" name="title" required>
+    </div>
+    <div class="form-row"><label>description:</label>
+        <input type="text" name="description" required></div>
+    <div class="form-row"><label>rating:</label>
+        <input name="rating" type="number" step="0.1" min="0" max="5" required></div>
+    <div class="form-row"><label>release_date:</label>
+        <input type="date" name="release_date" required></div>
+    <div class="form-row">Cover: </br>
+        <input type="file" name="cover" required></div>
+    <div class="form-row"><input type="submit" value="Add"></div>
+</form>
+</body>
+
+</html>

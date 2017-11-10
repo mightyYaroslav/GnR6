@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title><%= title %> (<%= release_year %>)</title>
+</head>
+
+<body class="blur-background">
+    <a href="/albums/all">All albums</a>
+    <div class="album">
+        <h1><%= title %> (<%= release_year %>)</h1>
+        <img src="data:image/jpg;base64,<%= new Buffer(image).toString('base64') %>">
+        <p><%= description %></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>GNR albums</title>
+</head>
+
+<body class="background">
+<div class="centered">
+    <h1>Welcome!</h1>
+    <p>This site is about Guns N' Roses albums</p>
+    <% if (user) {%>
+        <a href="/albums/all">Albums</a>
+    <% } else { %>
+        <a href="/user/register">Register</a>
+        <a href="/user/login">Log in</a>
+    <% } %>
+</div>
+</body>
+
+</html>

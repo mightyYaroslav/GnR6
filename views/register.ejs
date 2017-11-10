@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>GNR albums</title>
+</head>
+
+<body class="blur-background">
+<a href="/">Home</a>
+<h1>Registration</h1>
+<form action="/user/register" method="post" enctype="multipart/form-data">
+    <% if (error) {%>
+    <span class="form-row error">
+            <%= error%>
+        </span>
+    <% } %>
+    <div class="form-row">
+        <label>Username:</label>
+        <input type='text' name='username' class='form-control' value='<%= username || ""%>' required/>
+    </div>
+    <div class="form-row">
+        <label>Password:</label>
+        <input type='password' name='password' class='form-control' value='<%= password || "" %>' required>
+    </div>
+    <div class="form-row">
+        <label>Repeat password:</label>
+        <input type='password' name='password2' class='form-control' value='<%= password || "" %>' required/>
+    </div>
+    <div class="form-row">
+        <input type="submit" value="Register">
+    </div>
+</form>
+<h3>Already have an account?</h3>
+<a href="/user/login">Log in</a>
+</body>
+
+</html>
